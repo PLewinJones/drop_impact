@@ -62,6 +62,6 @@ There are various simulation settings such as that can be adjusted in the namesp
 
 The used non-dimensional parameters and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
 
-At each time-step ```n```, the gas elements are outputted in the      ```surface_elements_n.dat```. Each element has it's nodal data outputted in the format [$r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$], where $\theta$ is a normalised arc length from the base to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
+At each time-step ```n```, the gas elements are outputted in the      ```surface_elements_n.dat```. Each element has it's nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
 
 
