@@ -40,7 +40,7 @@ They can be set either in the namespace ``` Global_Physical_Variables ``` inside
 
 The default behavior is a drop-wall impact, with a flag required to use drop-drop. The gas-kinetic factors are set to 1 by default, and a flag is required to use the $\mathrm{Kn}$ dependent factors.
 
-The axisymmetric spatial coordinates $r$ and $z$ are scaled with $R$. Note that $z$ is the distance above the wall or symmetry plane, so for a drop-drop simulation the film thickness $h=2z$. The velocity components $u_r$ and $u_z$ are scaled with $U$ and time is scaled with with $R/U$. Liquid pressure $p_l$ is scaled with $U\mu_l/R$ and gas pressure $p_g$ with $U\mu_g/R$.
+The axisymmetric spatial coordinates $r$ and $z$ are scaled with $R$. Note that $z$ is the distance above the wall or symmetry plane, so for a drop-drop simulation below the drop the film thickness $h=2z$. The velocity components $u_r$ and $u_z$ are scaled with $U$ and time is scaled with with $R/U$. Liquid pressure $p_l$ is scaled with $U\mu_l/R$ and gas pressure $p_g$ with $U\mu_g/R$.
 
 ## Installation
 
@@ -61,6 +61,6 @@ There are various simulation settings such as that can be adjusted in the namesp
 
 The non-dimensional parameters used and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
 
-At each time-step ```n```, the gas elements are outputted in the file ```surface_elements_n.dat```. Each element has its nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base (at r=0) to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
+At each time-step ```n```, the gas elements are outputted in the file ```surface_elements_n.dat```. Each element has its nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base (at $r=0$) to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
 
 
