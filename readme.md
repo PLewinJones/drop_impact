@@ -38,7 +38,9 @@ Knudsen Number | $\mathrm{Kn}_R$ |$\lambda/R$
 
 They can be set either in the namespace ``` Global_Physical_Variables ``` inside ```drop_impact.cc``` (and the driver re-compiled), or passed as command-line arguments. The provided matlab script ```example_simulation.m```, which generates the bash script ```run_drop_impact.sh``` demonstrates this.
 
-The default behavior is a drop-wall impact, with a flag required to use drop-drop. The gas-kinetic factors are set to 1 by default, and a flag is required to use the $\mathrm{Kn}$ dependent factors.
+The default behavior is a drop-wall impact, with a flag required to use drop-drop. 
+
+The $\mathrm{Kn}$ dependent effective viscosities $\mu_{g,P}$ and $\mu_{g,C}$ are also non-dimensionalised to the gas-kinetic factors $\Delta_P=\mu_g/\mu_{g,P}$  and $\Delta_C=\mu_g/\mu_{g,C}$. The gas-kinetic factors are set to 1 by default, and a flag is required to use the $\mathrm{Kn}$ dependent factors.
 
 The axisymmetric spatial coordinates $r$ and $z$ are scaled with $R$. Note that $z$ is the distance above the wall or symmetry plane, so for a drop-drop simulation below the drop the film thickness $h=2z$. The velocity components $u_r$ and $u_z$ are scaled with $U$ and time is scaled with with $R/U$. Liquid pressure $p_l$ is scaled with $U\mu_l/R$ and gas pressure $p_g$ with $U\mu_g/R$.
 
