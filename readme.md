@@ -2,7 +2,7 @@
 
 ## The Problem
 
-This code simulates the impact of an axisymmetric liquid drop onto either a solid surface, or, via symmetry, the impact of two identical drops. The impact is cushioned by a gas film, which is modelled using lubrication theory. This reduces the gas film to a single PDE for the gas pressure solved along the surface of the drop.
+This code simulates the impact of an axisymmetric liquid drop onto either a solid surface, or, via symmetry, the impact of two identical drops. The impact is cushioned by a gas film, which is modelled using lubrication theory. This reduces the gas film's dynamics to a single PDE for the gas pressure solved along the surface of the drop.
 
 This is a driver code for the open-source finite element library [oomph-lib](https://oomph-lib.github.io/oomph-lib/doc/html/), which must be installed first to use this code. 
 
@@ -13,18 +13,17 @@ The problem depends on the following physical parameters:
 Parameter             | Symbol
 ----------------------|------------
 Initial Velocity      | $U$
-Initial Drop Radius           | $R$
-Viscosity             | $\mu_{l/g}$
-Density               | $\rho_{l/g}$
+Initial Drop Radius   | $R$
+Liquid Viscosity      | $\mu_{l}$
+Liquid Density        | $\rho_{l}$
+Gas Viscosity         | $\mu_g$ 
 Surface Tension       | $\gamma$
 Gravity               | $g$
 Hamaker Constant      | $A$
-Mean Free Path of Gas      | $\lambda$  
-
-Subscripts $l$ and $g$ refer to liquid and gas respectively.
+Mean Free Path of Gas | $\lambda$  
 
 Note that $U$ is relative to the wall/symmetry plane, so
-for a drop-drop impact this is half the relative speed of the impact. Gravity $g$ is only physically meaningful for drop-wall impacts.
+for a drop-drop impact this is half the relative speed of the impact $V=2U$. Gravity $g$ is only physically meaningful for drop-wall impacts.
 
 The problem is solved non-dimensionally, and the following non-dimensional parameters must be given to the code. These are chosen for consistency with the existing oomph-lib free-surface Navier-Stokes solvers.
 
@@ -41,7 +40,7 @@ They can be set either in the namespace ``` Global_Physical_Variables ``` inside
 
 The default behavior is a drop-wall impact, with a flag required to use drop-drop. The gas-kinetic factors are set to 1 by default, and a flag is required to use the $\mathrm{Kn}$ dependent factors.
 
-The axisymmetric spacial coordinates $r$ and $z$ are scaled with $R$. Note that $z$ is the distance above the wall or symmetry plane, so for a drop-drop simulation the film thickness is $2z$. The velocity components $u_r$ and $u_z$ are scaled with $U$ and time is scaled with with $R/U$. Liquid pressure $p_l$ is scaled with $U\mu_l/R$ and gas pressure $p_g$ with $U\mu_g/R$.
+The axisymmetric spatial coordinates $r$ and $z$ are scaled with $R$. Note that $z$ is the distance above the wall or symmetry plane, so for a drop-drop simulation the film thickness $h=2z$. The velocity components $u_r$ and $u_z$ are scaled with $U$ and time is scaled with with $R/U$. Liquid pressure $p_l$ is scaled with $U\mu_l/R$ and gas pressure $p_g$ with $U\mu_g/R$.
 
 ## Installation
 
@@ -60,8 +59,8 @@ There are various simulation settings such as that can be adjusted in the namesp
 
 ## Output and Post-Processing
 
-The used non-dimensional parameters and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
+The non-dimensional parameters used and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
 
-At each time-step ```n```, the gas elements are outputted in the      ```surface_elements_n.dat```. Each element has it's nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
+At each time-step ```n```, the gas elements are outputted in the file ```surface_elements_n.dat```. Each element has its nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base (at r=0) to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
 
 
