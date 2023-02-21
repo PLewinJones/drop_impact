@@ -30,7 +30,7 @@ The problem is solved non-dimensionally, and the following non-dimensional param
 Non-Dim Parameter | Symbol | Formula
 ------------------|---------|----------
 Reynolds Number |   $\mathrm{Re}$ | $\rho_l UR/\mu_l$
-Gravity Number |$\mathrm{Gr}$ |$\rho_l gR^2/(\mu_l U)$
+Gravity Number |$\bar{g}$ |$\rho_l gR^2/(\mu_l U)$
 Capilliary Number |$\mathrm{Ca}$ |$\mu_lU/\gamma$
 Viscosity Ratio |$\bar{\mu}$|$\mu_g/\mu_l$
 Non-Dim Hamaker Number | $\bar{A}$ |$A/(6\pi\mu_lUL^2)$
