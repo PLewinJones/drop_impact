@@ -36,7 +36,7 @@ Viscosity Ratio |$\bar{\mu}$|$\mu_g/\mu_l$
 Non-Dim Hamaker Number | $\bar{A}$ |$A/(6\pi\mu_lUR^2)$
 Knudsen Number | $\mathrm{Kn}_R$ |$\lambda/R$
 
-They can be set either in the namespace ``` Global_Physical_Variables ``` inside ```drop_impact.cc``` (and the driver re-compiled), or passed as command-line arguments. The provided matlab script ```example_simulation.m```, which generates the bash script ```run_drop_impact.sh``` demonstrates this.
+They can be set either in the namespace ``` Global_Physical_Variables ``` inside ```drop_impact.cc``` (and the driver re-compiled), or passed as command-line arguments. 
 
 The default behavior is a drop-wall impact, with a flag required to use drop-drop.
 
@@ -52,13 +52,13 @@ The folders mirror the folders in the default oomph-lib installation, and must b
 
 It is recommended to use the linear solver mumps to significantly increase the speed of the computation. Installation instructions are available on the oomph-lib website. This requires compiling with MPI, but this driver code has not been tested with parallel execution on a single simulation.
 
-## Simulation Settings
+There are various simulation settings that can be adjusted in the namespace ``` Global_Sim_Settings ``` inside ```drop_impact.cc```.
 
-An already existing folder for outputs must be specified. This can be passed as a command-line argument, as demonstrated in ``` run_drop_impact.sh ```.
-
-There are various simulation settings such as that can be adjusted in the namespace ``` Global_Sim_Settings ``` inside ```drop_impact.cc```.
+Bash scripts to reproduce the benchmark cases shown in Fig 1 in (LINK HERE) have been provided, and an example script for the simulations in Fig 7. A matlab script ```write_scripts.m``` which generates the bash scripts has also been provided, showing how the non-dimensional parameters were computed.
 
 ## Output and Post-Processing
+
+An already existing folder for outputs must be specified. This can be passed as a command-line argument, as demonstrated in the example scripts.
 
 The non-dimensional parameters used and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
 
