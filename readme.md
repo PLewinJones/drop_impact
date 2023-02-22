@@ -33,7 +33,7 @@ Reynolds Number |   $\mathrm{Re}$ | $\rho_l UR/\mu_l$
 Gravity Number |$\bar{g}$ |$\rho_l gR^2/(\mu_l U)$
 Capilliary Number |$\mathrm{Ca}$ |$\mu_lU/\gamma$
 Viscosity Ratio |$\bar{\mu}$|$\mu_g/\mu_l$
-Non-Dim Hamaker Number | $\bar{A}$ |$A/(6\pi\mu_lUL^2)$
+Non-Dim Hamaker Number | $\bar{A}$ |$A/(6\pi\mu_lUR^2)$
 Knudsen Number | $\mathrm{Kn}_R$ |$\lambda/R$
 
 They can be set either in the namespace ``` Global_Physical_Variables ``` inside ```drop_impact.cc``` (and the driver re-compiled), or passed as command-line arguments. The provided matlab script ```example_simulation.m```, which generates the bash script ```run_drop_impact.sh``` demonstrates this.
