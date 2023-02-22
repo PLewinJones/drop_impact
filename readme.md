@@ -4,7 +4,7 @@
 
 This code simulates the impact of an axisymmetric liquid drop onto either a solid surface, or, via symmetry, the impact of two identical drops. The impact is cushioned by a gas film, which is modelled using lubrication theory. This reduces the gas film's dynamics to a single PDE for the gas pressure solved along the surface of the drop.
 
-This is a driver code for the open-source finite element library [oomph-lib](https://oomph-lib.github.io/oomph-lib/doc/html/), which must be installed first to use this code. 
+This is a driver code for the open-source finite element library [oomph-lib](https://oomph-lib.github.io/oomph-lib/doc/html/), which must be installed first to use this code.
 
 LINK TO PAPER HERE.
 
@@ -16,7 +16,7 @@ Initial Velocity      | $U$
 Initial Drop Radius   | $R$
 Liquid Viscosity      | $\mu_{l}$
 Liquid Density        | $\rho_{l}$
-Gas Viscosity         | $\mu_g$ 
+Gas Viscosity         | $\mu_g$
 Surface Tension       | $\gamma$
 Gravity               | $g$
 Hamaker Constant      | $A$
@@ -38,7 +38,7 @@ Knudsen Number | $\mathrm{Kn}_R$ |$\lambda/R$
 
 They can be set either in the namespace ``` Global_Physical_Variables ``` inside ```drop_impact.cc``` (and the driver re-compiled), or passed as command-line arguments. The provided matlab script ```example_simulation.m```, which generates the bash script ```run_drop_impact.sh``` demonstrates this.
 
-The default behavior is a drop-wall impact, with a flag required to use drop-drop. 
+The default behavior is a drop-wall impact, with a flag required to use drop-drop.
 
 The $\mathrm{Kn}$ dependent effective viscosities $\mu_{g,P}$ and $\mu_{g,C}$ are also non-dimensionalised to the gas-kinetic factors $\Delta_P=\mu_g/\mu_{g,P}$  and $\Delta_C=\mu_g/\mu_{g,C}$. The gas-kinetic factors are set to 1 by default, and a flag is required to use the $\mathrm{Kn}$ dependent factors.
 
@@ -52,7 +52,6 @@ The folders mirror the folders in the default oomph-lib installation, and must b
 
 It is recommended to use the linear solver mumps to significantly increase the speed of the computation. Installation instructions are available on the oomph-lib website. This requires compiling with MPI, but this driver code has not been tested with parallel execution on a single simulation.
 
-
 ## Simulation Settings
 
 An already existing folder for outputs must be specified. This can be passed as a command-line argument, as demonstrated in ``` run_drop_impact.sh ```.
@@ -64,5 +63,3 @@ There are various simulation settings such as that can be adjusted in the namesp
 The non-dimensional parameters used and simulation settings are outputted in the header of ```trace.dat```. Below this at each time-step, the current time, time-step size, temporal error, minimum z value and number of fluid elements is appended.
 
 At each time-step ```n```, the gas elements are outputted in the file ```surface_elements_n.dat```. Each element has its nodal data outputted in the format [ $r$, $z$, $u_r$, $u_z$, $p_g$, $\theta$ ], where $\theta$ is a normalised arc length from the base (at $r=0$) to the top of the drop. The elements are not necessarily in order along the surface, and $\theta$ can be used to sort the boundary.
-
-
