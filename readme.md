@@ -6,7 +6,7 @@ This code simulates the impact of an axisymmetric liquid drop onto either a soli
 
 This is a driver code for the open-source finite element library [oomph-lib](https://oomph-lib.github.io/oomph-lib/doc/html/), which must be installed first to use this code.
 
-LINK TO PAPER HERE.
+[Gas Microfilms in Droplet Dynamics: When Do Drops Bounce?]{https://www.annualreviews.org/doi/abs/10.1146/annurev-fluid-121021-021121}
 
 The problem depends on the following physical parameters:
 
