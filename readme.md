@@ -54,7 +54,9 @@ It is recommended to use the linear solver mumps to significantly increase the s
 
 There are various simulation settings that can be adjusted in the namespace ``` Global_Sim_Settings ``` inside ```drop_impact.cc```.
 
-Bash scripts to reproduce the benchmark cases shown in Fig 1 in (LINK HERE) have been provided, and an example script for the simulations in Fig 7. A matlab script ```write_scripts.m``` which generates the bash scripts has also been provided, showing how the non-dimensional parameters were computed.
+Bash scripts to reproduce the benchmark cases shown in Fig 1 in (
+
+[Gas Microfilms in Droplet Dynamics: When Do Drops Bounce?](https://www.annualreviews.org/doi/abs/10.1146/annurev-fluid-121021-021121)) have been provided, and an example script for the simulations in Fig 7. A matlab script ```write_scripts.m``` which generates the bash scripts has also been provided, showing how the non-dimensional parameters were computed.
 
 ## Output and Post-Processing
 
