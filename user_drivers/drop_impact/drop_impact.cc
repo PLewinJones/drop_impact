@@ -962,7 +962,7 @@ int main(int argc, char *argv[]) {
 
   // Print Trace file header
   trace_file << "---------------------------------------------" << std::endl;
-  trace_file << "---------- Leidenfrost Drop Impact ----------" << std::endl;
+  trace_file << "----------------- Drop Impact ---------------" << std::endl;
   trace_file << "---------------------------------------------" << std::endl;
   trace_file << "Output Folder:       " << Global_Sim_Settings::result_folder
              << std::endl;
