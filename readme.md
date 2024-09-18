@@ -1,5 +1,7 @@
 # Drop Impact
 
+[Collision of liquid drops: bounce or merge?](https://doi.org/10.1017/jfm.2024.722)
+
 [Gas Microfilms in Droplet Dynamics: When Do Drops Bounce?](https://www.annualreviews.org/doi/abs/10.1146/annurev-fluid-121021-021121)
 
 ## The Problem
